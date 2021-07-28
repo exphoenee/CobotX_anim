@@ -18,23 +18,44 @@
 #axes-j1 {
   -webkit-animation: rotate-j1 1s linear infinite alternate;
   animation: rotate-j1 1s linear infinite alternate;
-  transform-origin: 0% 0%;
+  transform-origin: 12% 92%;
+  transform-box: fill-box;
 }
 
 @-webkit-keyframes rotate-j1 {
   from {
-    transform: rotate(0deg);
+    transform: rotateZ(0deg);
   }
   to {
-    transform: rotate(10deg);
+    transform: rotateZ(10deg);
   }
 }
 
+/* animation of the j1 axis of robot*/
 @keyframes rotate-j1 {
   from {
-    transform: rotate(0deg);
+    transform: rotateZ(0deg);
   }
   to {
-    transform: rotate(10deg);
+    transform: rotateZ(10deg);
+  }
+}
+
+@-webkit-keyframes wifi-anim {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+/* animation of the wifi symbols */
+@keyframes wifi-anim {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1.05);
   }
 }
