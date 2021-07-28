@@ -6,10 +6,19 @@
   align-items: center;
 }
 
+/* keep everityhing in position, but change the transform origin to element middle */
+#hero-img {
+  position: absolute;
+}
+
+#hero-img path {
+  position: relative;
+}
+
 #axes-j1 {
   -webkit-animation: rotate-j1 1s linear infinite alternate;
   animation: rotate-j1 1s linear infinite alternate;
-  transform-origin: -10% 0%;
+  transform-origin: 0% 0%;
 }
 
 @-webkit-keyframes rotate-j1 {
