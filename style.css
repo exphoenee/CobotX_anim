@@ -88,21 +88,230 @@
 }
 
 /* robot animations */
-#products .product {
-  -webkit-animation: transportation 3.5s linear infinite alternate;
-  animation: transportation 3.5s linear infinite alternate;
+#robot .shoulder {
+  -webkit-animation: shoulder-rotate 5s linear infinite alternate;
+  animation: shoulder-rotate 5s linear infinite alternate;
   transform-box: fill-box;
-  transform-origin: center right;
+  transform-origin: 50% 90%;
+}
+#robot .elbow {
+  -webkit-animation: elbow-rotate 5s linear infinite alternate;
+  animation: elbow-rotate 5s linear infinite alternate;
+  transform-box: fill-box;
+  transform-origin: 100% 90%;
+}
+#robot #cable-1 {
+  -webkit-animation: sink 5s linear infinite alternate;
+  animation: sink 5s linear infinite alternate;
+  transform-box: fill-box;
+  transform-origin: 100% 90%;
+}
+
+#robot .wirst-1 {
+  -webkit-animation: wirst-rotate 5s linear infinite alternate;
+  animation: wirst-rotate 5s linear infinite alternate;
+  transform-box: fill-box;
+  transform-origin: 75% 15%;
+}
+
+#robot .gripper-1 {
+  -webkit-animation: gripper-1-close 10s linear infinite;
+  animation: gripper-1-close 10s linear infinite;
+  transform-box: fill-box;
+  transform-origin: 5% 5%;
+}
+
+#robot .gripper-2 {
+  -webkit-animation: gripper-2-close 10s linear infinite;
+  animation: gripper-2-close 10s linear infinite;
+  transform-box: fill-box;
+  transform-origin: 90% 5%;
 }
 
 /*************************
 /** Animation keyframes **
 /*************************/
 
+/* robot gripper-1 motion */
+@-webkit-keyframes gripper-1-close {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(0deg);
+  }
+  52% {
+    transform: RotateZ(15deg);
+  }
+  54% {
+    transform: RotateZ(0deg);
+  }
+  56% {
+    transform: RotateZ(15deg);
+  }
+  58% {
+    transform: RotateZ(0deg);
+  }
+}
+@keyframes gripper-1-close {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(0deg);
+  }
+  52% {
+    transform: RotateZ(15deg);
+  }
+  54% {
+    transform: RotateZ(0deg);
+  }
+  56% {
+    transform: RotateZ(15deg);
+  }
+  58% {
+    transform: RotateZ(0deg);
+  }
+}
+/* robot gripper-2 motion */
+@-webkit-keyframes gripper-2-close {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(0deg);
+  }
+  52% {
+    transform: RotateZ(-15deg);
+  }
+  54% {
+    transform: RotateZ(0deg);
+  }
+  56% {
+    transform: RotateZ(-15deg);
+  }
+  58% {
+    transform: RotateZ(0deg);
+  }
+}
+@keyframes gripper-2-close {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(0deg);
+  }
+  52% {
+    transform: RotateZ(-15deg);
+  }
+  54% {
+    transform: RotateZ(0deg);
+  }
+  56% {
+    transform: RotateZ(-15deg);
+  }
+  58% {
+    transform: RotateZ(0deg);
+  }
+}
+
 /* robot shoulder motion */
+@-webkit-keyframes shoulder-rotate {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(15deg);
+  }
+  100% {
+    transform: RotateZ(15deg);
+  }
+}
+@keyframes shoulder-rotate {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(15deg);
+  }
+  100% {
+    transform: RotateZ(15deg);
+  }
+}
+
+/* robot elbow motion */
+@-webkit-keyframes elbow-rotate {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(-15deg);
+  }
+  100% {
+    transform: RotateZ(-15deg);
+  }
+}
+@keyframes elbow-rotate {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(-15deg);
+  }
+  100% {
+    transform: RotateZ(-15deg);
+  }
+}
+
+/* robot wirst motion */
+@-webkit-keyframes wirst-rotate {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(0deg);
+  }
+  100% {
+    transform: RotateZ(25deg);
+  }
+}
+@keyframes wirst-rotate {
+  0% {
+    transform: RotateZ(0deg);
+  }
+  50% {
+    transform: RotateZ(0deg);
+  }
+  100% {
+    transform: RotateZ(25deg);
+  }
+}
+
+/* robot cable motion */
+@-webkit-keyframes sink {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(15%, 45%);
+  }
+  100% {
+    transform: translate(15%, 50%);
+  }
+}
+@keyframes sink {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(15%, 45%);
+  }
+  100% {
+    transform: translate(15%, 50%);
+  }
+}
 
 /* product motion */
-
 @-webkit-keyframes transportation {
   0% {
     transform: translateX(-100%);
