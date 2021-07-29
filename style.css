@@ -100,7 +100,15 @@
   transform-box: fill-box;
   transform-origin: 100% 90%;
 }
+
 #robot #cable-1 {
+  -webkit-animation: sink 5s linear infinite alternate;
+  animation: sink 5s linear infinite alternate;
+  transform-box: fill-box;
+  transform-origin: 100% 90%;
+}
+
+#robot #cable-2 {
   -webkit-animation: sink 5s linear infinite alternate;
   animation: sink 5s linear infinite alternate;
   transform-box: fill-box;
@@ -128,10 +136,106 @@
   transform-origin: 90% 5%;
 }
 
+#robot .finger-1 {
+  -webkit-animation: finger-1-close 10s linear infinite;
+  animation: finger-1-close 10s linear infinite;
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+
+#robot .finger-2 {
+  -webkit-animation: finger-2-close 10s linear infinite;
+  animation: finger-2-close 10s linear infinite;
+  transform-box: fill-box;
+  transform-origin: top center;
+}
+
 /*************************
 /** Animation keyframes **
 /*************************/
 
+/* robot finger-1 motion */
+@-webkit-keyframes finger-1-close {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  52% {
+    transform: translateX(50%);
+  }
+  54% {
+    transform: translateX(0%);
+  }
+  56% {
+    transform: translateX(50%);
+  }
+  58% {
+    transform: translateX(0%);
+  }
+}
+@keyframes finger-1-close {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  52% {
+    transform: translateX(50%);
+  }
+  54% {
+    transform: translateX(0%);
+  }
+  56% {
+    transform: translateX(50%);
+  }
+  58% {
+    transform: translateX(0%);
+  }
+}
+/* robot finger-2 motion */
+@-webkit-keyframes finger-2-close {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  52% {
+    transform: translateX(-50%);
+  }
+  54% {
+    transform: translateX(0%);
+  }
+  56% {
+    transform: translateX(-50%);
+  }
+  58% {
+    transform: translateX(0%);
+  }
+}
+@keyframes finger-2-close {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  52% {
+    transform: translateX(-50%);
+  }
+  54% {
+    transform: translateX(0%);
+  }
+  56% {
+    transform: translateX(-50%);
+  }
+  58% {
+    transform: translateX(0%);
+  }
+}
 /* robot gripper-1 motion */
 @-webkit-keyframes gripper-1-close {
   0% {

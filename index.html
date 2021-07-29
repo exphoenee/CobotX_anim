@@ -5,8 +5,526 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <!--link rel="stylesheet" href="style.css" /-->
   </head>
+  <style>
+    .container {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* keep everityhing in position, but change the transform origin to element middle */
+    #hero-img {
+      position: absolute;
+    }
+
+    #hero-img path {
+      position: relative;
+    }
+
+    /* WiFi icon animation */
+    #right-wifi {
+      -webkit-animation: wifi-anim 2s linear infinite alternate;
+      animation: wifi-anim 2s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center bottom;
+    }
+    #middle-wifi {
+      -webkit-animation: wifi-anim 3s linear infinite alternate;
+      animation: wifi-anim 3s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center bottom;
+    }
+    #left-wifi {
+      -webkit-animation: wifi-anim 2.3s linear infinite alternate;
+      animation: wifi-anim 2.3s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center bottom;
+    }
+
+    /* Eye blinking */
+    #left-figure .face .eye {
+      -webkit-animation: eye-blink-1 1.7s linear infinite alternate;
+      animation: eye-blink-1 1.7s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center center;
+    }
+
+    #right-figure .face .eye {
+      -webkit-animation: eye-blink-1 2.3s linear infinite alternate;
+      animation: eye-blink-1 2.3s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center center;
+    }
+
+    #middle-figure .face .eye {
+      -webkit-animation: eye-blink-1 1.9s linear infinite alternate;
+      animation: eye-blink-1 1.9s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center center;
+    }
+
+    /* arm swinging */
+    #right-figure .left-arm {
+      -webkit-animation: arm-swing 1s linear infinite alternate;
+      animation: arm-swing 1s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: top left;
+    }
+    /*
+#left-figure .left-arm {
+  -webkit-animation: arm-swing 1s linear infinite alternate;
+  animation: arm-swing 1s linear infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center right;
+}
+*/
+    #left-figure .right-arm {
+      -webkit-animation: arm-swing 1.5s linear infinite alternate;
+      animation: arm-swing 1.5s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center right;
+    }
+
+    /* product on conveyor belt  */
+    #products .product {
+      -webkit-animation: transportation 3.5s linear infinite alternate;
+      animation: transportation 3.5s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center right;
+    }
+
+    /* robot animations */
+    #robot .shoulder {
+      -webkit-animation: shoulder-rotate 5s linear infinite alternate;
+      animation: shoulder-rotate 5s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: 50% 90%;
+    }
+    #robot .elbow {
+      -webkit-animation: elbow-rotate 5s linear infinite alternate;
+      animation: elbow-rotate 5s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: 100% 90%;
+    }
+    #robot #cable-1 {
+      -webkit-animation: sink 5s linear infinite alternate;
+      animation: sink 5s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: 100% 90%;
+    }
+
+    #robot .wirst-1 {
+      -webkit-animation: wirst-rotate 5s linear infinite alternate;
+      animation: wirst-rotate 5s linear infinite alternate;
+      transform-box: fill-box;
+      transform-origin: 75% 15%;
+    }
+
+    #robot .gripper-1 {
+      -webkit-animation: gripper-1-close 10s linear infinite;
+      animation: gripper-1-close 10s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 5% 5%;
+    }
+
+    #robot .gripper-2 {
+      -webkit-animation: gripper-2-close 10s linear infinite;
+      animation: gripper-2-close 10s linear infinite;
+      transform-box: fill-box;
+      transform-origin: 90% 5%;
+    }
+
+    #robot .finger-1 {
+      -webkit-animation: finger-1-close 10s linear infinite;
+      animation: finger-1-close 10s linear infinite;
+      transform-box: fill-box;
+      transform-origin: top center;
+    }
+
+    #robot .finger-2 {
+      -webkit-animation: finger-2-close 10s linear infinite;
+      animation: finger-2-close 10s linear infinite;
+      transform-box: fill-box;
+      transform-origin: top center;
+    }
+
+    /*************************
+/** Animation keyframes **
+/*************************/
+
+    /* robot finger-1 motion */
+    @-webkit-keyframes finger-1-close {
+      0% {
+        transform: translateX(0%);
+      }
+      50% {
+        transform: translateX(0%);
+      }
+      52% {
+        transform: translateX(50%);
+      }
+      54% {
+        transform: translateX(0%);
+      }
+      56% {
+        transform: translateX(50%);
+      }
+      58% {
+        transform: translateX(0%);
+      }
+    }
+    @keyframes finger-1-close {
+      0% {
+        transform: translateX(0%);
+      }
+      50% {
+        transform: translateX(0%);
+      }
+      52% {
+        transform: translateX(50%);
+      }
+      54% {
+        transform: translateX(0%);
+      }
+      56% {
+        transform: translateX(50%);
+      }
+      58% {
+        transform: translateX(0%);
+      }
+    }
+    /* robot finger-2 motion */
+    @-webkit-keyframes finger-2-close {
+      0% {
+        transform: translateX(0%);
+      }
+      50% {
+        transform: translateX(0%);
+      }
+      52% {
+        transform: translateX(-50%);
+      }
+      54% {
+        transform: translateX(0%);
+      }
+      56% {
+        transform: translateX(-50%);
+      }
+      58% {
+        transform: translateX(0%);
+      }
+    }
+    @keyframes finger-2-close {
+      0% {
+        transform: translateX(0%);
+      }
+      50% {
+        transform: translateX(0%);
+      }
+      52% {
+        transform: translateX(-50%);
+      }
+      54% {
+        transform: translateX(0%);
+      }
+      56% {
+        transform: translateX(-50%);
+      }
+      58% {
+        transform: translateX(0%);
+      }
+    }
+    /* robot gripper-1 motion */
+    @-webkit-keyframes gripper-1-close {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(0deg);
+      }
+      52% {
+        transform: RotateZ(15deg);
+      }
+      54% {
+        transform: RotateZ(0deg);
+      }
+      56% {
+        transform: RotateZ(15deg);
+      }
+      58% {
+        transform: RotateZ(0deg);
+      }
+    }
+    @keyframes gripper-1-close {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(0deg);
+      }
+      52% {
+        transform: RotateZ(15deg);
+      }
+      54% {
+        transform: RotateZ(0deg);
+      }
+      56% {
+        transform: RotateZ(15deg);
+      }
+      58% {
+        transform: RotateZ(0deg);
+      }
+    }
+    /* robot gripper-2 motion */
+    @-webkit-keyframes gripper-2-close {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(0deg);
+      }
+      52% {
+        transform: RotateZ(-15deg);
+      }
+      54% {
+        transform: RotateZ(0deg);
+      }
+      56% {
+        transform: RotateZ(-15deg);
+      }
+      58% {
+        transform: RotateZ(0deg);
+      }
+    }
+    @keyframes gripper-2-close {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(0deg);
+      }
+      52% {
+        transform: RotateZ(-15deg);
+      }
+      54% {
+        transform: RotateZ(0deg);
+      }
+      56% {
+        transform: RotateZ(-15deg);
+      }
+      58% {
+        transform: RotateZ(0deg);
+      }
+    }
+
+    /* robot shoulder motion */
+    @-webkit-keyframes shoulder-rotate {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(15deg);
+      }
+      100% {
+        transform: RotateZ(15deg);
+      }
+    }
+    @keyframes shoulder-rotate {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(15deg);
+      }
+      100% {
+        transform: RotateZ(15deg);
+      }
+    }
+
+    /* robot elbow motion */
+    @-webkit-keyframes elbow-rotate {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(-15deg);
+      }
+      100% {
+        transform: RotateZ(-15deg);
+      }
+    }
+    @keyframes elbow-rotate {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(-15deg);
+      }
+      100% {
+        transform: RotateZ(-15deg);
+      }
+    }
+
+    /* robot wirst motion */
+    @-webkit-keyframes wirst-rotate {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(0deg);
+      }
+      100% {
+        transform: RotateZ(25deg);
+      }
+    }
+    @keyframes wirst-rotate {
+      0% {
+        transform: RotateZ(0deg);
+      }
+      50% {
+        transform: RotateZ(0deg);
+      }
+      100% {
+        transform: RotateZ(25deg);
+      }
+    }
+
+    /* robot cable motion */
+    @-webkit-keyframes sink {
+      0% {
+        transform: translate(0%, 0%);
+      }
+      50% {
+        transform: translate(15%, 45%);
+      }
+      100% {
+        transform: translate(15%, 50%);
+      }
+    }
+    @keyframes sink {
+      0% {
+        transform: translate(0%, 0%);
+      }
+      50% {
+        transform: translate(15%, 45%);
+      }
+      100% {
+        transform: translate(15%, 50%);
+      }
+    }
+
+    /* product motion */
+    @-webkit-keyframes transportation {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes transportation {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* eye blinking */
+
+    @-webkit-keyframes arm-swing {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(5deg);
+      }
+    }
+
+    @keyframes arm-swing {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(5deg);
+      }
+    }
+
+    /* eye blinking */
+    @-webkit-keyframes eye-blink-1 {
+      0% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.1;
+      }
+    }
+
+    @keyframes eye-blink-1 {
+      0% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.1;
+      }
+    }
+
+    /* animation of the wifi symbols */
+
+    @-webkit-keyframes wifi-anim {
+      0% {
+        transform: scale(0.95);
+      }
+      10% {
+        transform: scale(1.05);
+      }
+      30% {
+        transform: scale(0.95);
+      }
+      60% {
+        transform: scale(1.05);
+      }
+      90% {
+        transform: scale(0.95);
+      }
+      100% {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes wifi-anim {
+      0% {
+        transform: scale(0.95);
+      }
+      10% {
+        transform: scale(1.05);
+      }
+      30% {
+        transform: scale(0.95);
+      }
+      60% {
+        transform: scale(1.05);
+      }
+      90% {
+        transform: scale(0.95);
+      }
+      100% {
+        transform: scale(1.05);
+      }
+    }
+  </style>
   <body>
     <div class="container">
       <svg
@@ -2162,11 +2680,13 @@
             </g>
           </g>
           <g id="robot">
-            <path
-              id="Vector_402"
-              d="M293.479 369.322L295.22 367.908C279.896 349.071 273.657 333.359 276.145 319.877C279.533 301.52 298.831 290.392 315.862 280.575C325.422 275.063 334.45 269.856 339.549 263.952C343.378 259.521 344.963 254.722 344.264 249.689C342.678 238.27 329.946 229.765 329.408 229.409L328.172 231.285C328.296 231.368 340.602 239.598 342.042 250.001C342.646 254.363 341.236 258.563 337.853 262.48C332.999 268.1 324.129 273.213 314.74 278.628C297.29 288.689 277.512 300.093 273.935 319.466C271.323 333.631 277.715 349.944 293.479 369.322Z"
-              fill="#DFAFA2"
-            />
+            <g id="cable-2">
+              <path
+                id="Vector_402"
+                d="M293.479 369.322L295.22 367.908C279.896 349.071 273.657 333.359 276.145 319.877C279.533 301.52 298.831 290.392 315.862 280.575C325.422 275.063 334.45 269.856 339.549 263.952C343.378 259.521 344.963 254.722 344.264 249.689C342.678 238.27 329.946 229.765 329.408 229.409L328.172 231.285C328.296 231.368 340.602 239.598 342.042 250.001C342.646 254.363 341.236 258.563 337.853 262.48C332.999 268.1 324.129 273.213 314.74 278.628C297.29 288.689 277.512 300.093 273.935 319.466C271.323 333.631 277.715 349.944 293.479 369.322Z"
+                fill="#DFAFA2"
+              />
+            </g>
             <path
               id="Vector_403"
               d="M241.037 430.861L248.609 426.019C236.167 406.564 236.171 388.913 248.618 374.972C269.307 351.8 311.314 370.117 311.736 370.304L315.4 362.097C306.85 358.522 297.861 356.102 288.671 354.9C268.584 352.351 252.418 357.222 241.913 368.987C226.717 386.007 226.405 407.982 241.037 430.861Z"
