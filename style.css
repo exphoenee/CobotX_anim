@@ -16,11 +16,23 @@
 }
 
 /* WiFi icon animation */
-.wifi path {
-  -webkit-animation: wifi-anim 1s linear infinite alternate;
-  animation: wifi-anim 1s linear infinite alternate;
+#right-wifi {
+  -webkit-animation: wifi-anim 2s linear infinite alternate;
+  animation: wifi-anim 2s linear infinite alternate;
   transform-box: fill-box;
-  transform-origin: center center;
+  transform-origin: center bottom;
+}
+#middle-wifi {
+  -webkit-animation: wifi-anim 3s linear infinite alternate;
+  animation: wifi-anim 3s linear infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+#left-wifi {
+  -webkit-animation: wifi-anim 2.3s linear infinite alternate;
+  animation: wifi-anim 2.3s linear infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center bottom;
 }
 
 /* Eye blinking */
@@ -39,8 +51,8 @@
 }
 
 #middle-figure .face .eye {
-  -webkit-animation: arm-swing 1.9s linear infinite alternate;
-  animation: arm-swing 1.9s linear infinite alternate;
+  -webkit-animation: eye-blink-1 1.9s linear infinite alternate;
+  animation: eye-blink-1 1.9s linear infinite alternate;
   transform-box: fill-box;
   transform-origin: center center;
 }
@@ -67,9 +79,47 @@
   transform-origin: center right;
 }
 
+/* product on conveyor belt  */
+#products .product {
+  -webkit-animation: transportation 3.5s linear infinite alternate;
+  animation: transportation 3.5s linear infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center right;
+}
+
+/* robot animations */
+#products .product {
+  -webkit-animation: transportation 3.5s linear infinite alternate;
+  animation: transportation 3.5s linear infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center right;
+}
+
 /*************************
 /** Animation keyframes **
 /*************************/
+
+/* robot shoulder motion */
+
+/* product motion */
+
+@-webkit-keyframes transportation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes transportation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 
 /* eye blinking */
 
@@ -90,6 +140,7 @@
     transform: rotate(5deg);
   }
 }
+
 /* eye blinking */
 @-webkit-keyframes eye-blink-1 {
   0% {
@@ -118,19 +169,43 @@
 /* animation of the wifi symbols */
 
 @-webkit-keyframes wifi-anim {
-  from {
+  0% {
     transform: scale(0.95);
   }
-  to {
+  10% {
+    transform: scale(1.05);
+  }
+  30% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  90% {
+    transform: scale(0.95);
+  }
+  100% {
     transform: scale(1.05);
   }
 }
 
 @keyframes wifi-anim {
-  from {
+  0% {
     transform: scale(0.95);
   }
-  to {
+  10% {
+    transform: scale(1.05);
+  }
+  30% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  90% {
+    transform: scale(0.95);
+  }
+  100% {
     transform: scale(1.05);
   }
 }
